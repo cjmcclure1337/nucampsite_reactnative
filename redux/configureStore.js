@@ -1,4 +1,4 @@
-import {createStore, combineReduceres, applyMiddleware} from "redux";
+import {createStore, combineReducers, applyMiddleware} from "redux";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
 import {campsites} from "./campsites";
