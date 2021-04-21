@@ -220,20 +220,6 @@ const CustomDrawerContentComponent = props => (
 
 const MainNavigator = createDrawerNavigator(
     {
-        
-        Directory: {
-            screen: DirectoryNavigator,
-            navigationOptions: {
-                drawerIcon: ({tintColor}) => (
-                    <Icon
-                        name='list'
-                        type='font-awesome'
-                        size={24}
-                        color={tintColor}
-                    />
-                )
-            }
-        },
         Home: {
             screen: HomeNavigator,
             navigationOptions: {
@@ -241,6 +227,19 @@ const MainNavigator = createDrawerNavigator(
                     <Icon
                         name="home"
                         type="font-awesome"
+                        size={24}
+                        color={tintColor}
+                    />
+                )
+            }
+        },
+        Directory: {
+            screen: DirectoryNavigator,
+            navigationOptions: {
+                drawerIcon: ({tintColor}) => (
+                    <Icon
+                        name='list'
+                        type='font-awesome'
                         size={24}
                         color={tintColor}
                     />
@@ -267,7 +266,7 @@ const MainNavigator = createDrawerNavigator(
                 drawerLabel: "My Favorites",
                 drawerIcon: ({tintColor}) => (
                     <Icon
-                        name='tree'
+                        name='heart'
                         type='font-awesome'
                         size={24}
                         color={tintColor}

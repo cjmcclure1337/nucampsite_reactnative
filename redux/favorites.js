@@ -8,7 +8,8 @@ export const favorites = (state = [], action) => {
             }
             console.log("Adding Favorite");
             return state.concat(action.payload);
-
+        case ActionTypes.DELETE_FAVORITE:
+            return state.filter(favorite => favorite !== action.payload);
         default:
             return state;
     }
