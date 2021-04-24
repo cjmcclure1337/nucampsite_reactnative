@@ -20,6 +20,8 @@ const mapDispatchToProps = {
 }
 
 function RenderCampsite(props) {
+
+    const recognizeComment = ({dx}) => (dx > 200) ? true : false;
     
     const {campsite} = props;
 
@@ -53,6 +55,9 @@ function RenderCampsite(props) {
                     ],
                     { cancelable: false }
                 );
+            }
+            else if (recognizeComment(gestureState)) {
+                props.onShowModal();
             }
             return true;
         }
