@@ -5,6 +5,7 @@ import * as ImageManipulator from "expo-image-manipulator";
 import * as SecureStore from 'expo-secure-store';
 import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
+import * as MediaLibrary from "expo-media-library";
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { baseUrl } from '../shared/baseUrl';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -177,6 +178,7 @@ class RegisterTab extends Component {
         console.log("Processed Image: ", processedImage);
 
         this.setState({imageUrl: processedImage.uri});
+        MediaLibrary.saveToLibraryAsync(processedImage.uri);
     }
 
     getImageFromGallery = async () => {
